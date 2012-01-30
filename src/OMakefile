@@ -1,5 +1,5 @@
 
-CFLAGS += -g -Wall -O2 -I../leveldb/include -fPIC
+CFLAGS += -g -Wall -O2 -I ../leveldb/include -fPIC
 
 %.o: %.c
 	$(OCAMLC) -cc g++ $(mapprefix -ccopt, $(CFLAGS)) -c $^

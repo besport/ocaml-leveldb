@@ -1,0 +1,5 @@
+version = "0.0.1"
+description = "ocaml leveldb binding"
+requires = ""
+archive(byte) = "leveldb.cma"
+archive(native) = "leveldb.cmxa"
