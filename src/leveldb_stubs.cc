@@ -442,9 +442,6 @@ ldb_put(value t, value k, value v, value sync, value snapshot)
 
  options.sync = (Val_true == sync);
 
- if(Val_true == snapshot)
-     options.post_write_snapshot = &snap;
-
  caml_enter_blocking_section();
  leveldb::Status status = db->Put(options, key, val);
  RELEASE_HANDLE(t);
@@ -473,9 +470,6 @@ ldb_delete(value t, value k, value sync, value snapshot)
  const leveldb::Snapshot *snap = NULL;
 
  options.sync = (Val_true == sync);
-
- if(Val_true == snapshot)
-     options.post_write_snapshot = &snap;
 
  caml_enter_blocking_section();
  leveldb::Status status = db->Delete(options, key);
@@ -736,8 +730,6 @@ ldb_write_batch(value t, value batch, value sync, value snapshot)
  leveldb::WriteOptions options;
  const leveldb::Snapshot *snap = NULL;
  options.sync = (Val_true == sync);
- if(Val_true == snapshot)
-     options.post_write_snapshot = &snap;
 
  caml_enter_blocking_section();
  leveldb::Status status = db->Write(options, b);
