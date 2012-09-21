@@ -6,7 +6,7 @@ BYTE_ENABLED = true
 OCAMLFLAGS += -annot -thread
 OCAMLOPTFLAGS += -inline 100
 
-.SUBDIRS: src test
+.SUBDIRS: src
 
 .SUBDIRS: leveldb
     libleveldb.a:
