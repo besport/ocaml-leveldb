@@ -15,7 +15,7 @@ OCAMLOPTFLAGS += -inline 100
     clean:
        make clean
 
-PACKAGE_FILES = $(cd src, $(ls *.cma *.cmxa *.cmx *.cmi *.mli *.so *.a))
+PACKAGE_FILES = $(cd src, $(ls *.cma *.cmxa *.cmx *.cmxs *.cmi *.mli *.so *.a))
 
 .PHONY: install
 install:
