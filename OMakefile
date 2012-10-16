@@ -13,9 +13,3 @@ OCAMLOPTFLAGS += -inline 100
        make
     clean:
        make clean
-
-install:
-	ocamlfind install leveldb META src/dllcamlleveldb.so src/levelDB.cmi src/leveldb.cma src/leveldb.cmxa src/leveldb.a
-
-uninstall:
-	ocamlfind remove leveldb
